@@ -12,6 +12,6 @@ class Ingredient extends Model
 
     public function Recipes()
     {
-        return $this->belongsToMany(Recipe::class, 'ingredient_recipes');
+        return $this->belongsToMany(Recipe::class, 'ingredient_recipes')->withPivot('measurement', 'count');
     }
 }

@@ -12,7 +12,7 @@ class Recipe extends Model
 
     public function ingredients()
     {
-        return $this->belongsToMany(Ingredient::class, 'ingredient_recipes');
+        return $this->belongsToMany(Ingredient::class, 'ingredient_recipes')->withPivot('measurement', 'count');
     }
     public function dietTypes()
     {

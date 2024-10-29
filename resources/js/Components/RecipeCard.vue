@@ -24,7 +24,7 @@ defineProps({ recipe: Object });
             ></div>
             <Link
                 class="group relative border inline-flex border-primary"
-                :href="`recipes/${recipe.id}`"
+                :href="`recipe/${recipe.id}`"
             >
                 <span
                     class="block px-5 py-2 bg-primary transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1 text-white"

@@ -9,7 +9,6 @@ import RecipeCard from "../Components/RecipeCard.vue";
 const props = defineProps({
     recipes: Object,
 });
-console.log(props.recipes.links);
 </script>
 <template>
     <AppLayout>

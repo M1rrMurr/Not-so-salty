@@ -17,8 +17,8 @@ class IngredientRecipeFactory extends Factory
     public function definition(): array
     {
         return [
-            'recipe_id' => rand(1, 10),
-            'ingredient_id' => rand(1, 10),
+
+
             'measurement' => fake()->randomElement(['kg', 'spoon', 'tea-spoon']),
             'count' => rand(1, 4)
         ];

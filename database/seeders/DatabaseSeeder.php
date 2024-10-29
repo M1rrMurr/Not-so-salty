@@ -22,19 +22,28 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-        $types = ['vegan', 'vegetarian', 'non-vegetarian'];
-        $recipeNumber = 20;
+        $types = ['vegan', 'vegetarian', 'non-vegan'];
+        $recipeNumber = 100;
 
         Ingredient::factory(10)->create();
         Recipe::factory($recipeNumber)->create();
-        IngredientRecipe::factory(100)->create();
+
+        foreach (range(1, 5) as $_) {
+            foreach (range(1, $recipeNumber) as $n) {
+
+                IngredientRecipe::factory()->create([
+                    'recipe_id' => $n,
+                    'ingredient_id' => rand(1, 10),
+                ]);
+            }
+        }
+
         foreach ($types as $type) {
             DietType::factory()->create(['type' => $type]);
         }
         foreach (range(1, $recipeNumber) as $n) {
             DietTypeRecipe::factory()->create(['recipe_id' => $n]);
         }
-
 
         User::factory()->create([
             'name' => 'Test User',
